@@ -57,17 +57,17 @@ export const Search = (props : Props) => {
   return (
     <div>
         <div className='bg-blue-500 p-10 text-center'>
-        <h2 className='text-white p-20 md:text-6xl text-2xl'>Digite a cidade que você quer saber a previsão... 😎</h2>
+        <h2 className='text-white md:p-20 pb-3 md:text-6xl text-2xl'>Digite a cidade que você quer saber a previsão... 😎</h2>
         <form action="" onSubmit={(e) => searchInput(e)}>
         <input type="text"  
-        className=' md:w-[80%] md:h-[60px] pl-10 outline-none rounded-full h-14'
+        className=' md:w-[80%] md:h-[60px] pl-10 outline-none rounded-full h-12'
         placeholder={props.placeholder}
          ref={inputRef}
          defaultValue={props.defaultValue}/>
          <br />
 
          <input type="submit" value="Pesquisar por cidade" 
-         className='p-3 bg-red-500 rounded-full text-white mt-5  ml-2 cursor-pointer hover:bg-red-600 border-none outline-none 
+         className='p-3 bg-red-600 rounded-full text-white mt-5  ml-2 cursor-pointer hover:bg-red-700 border-none outline-none 
           w-60 md:w-[900px]'/>
          </form>
     </div>
@@ -75,18 +75,26 @@ export const Search = (props : Props) => {
     <div>
     {weatherData && (
         <div className='text-center justify-center'>
-          <p className='border-b border-b-=[#ccc] p-3 md:p-5 mx-12 md:mx-96'>Temperatura:  <span className='font-bold'>{weatherData.temp}</span></p>
-          <p className='border-b border-b-=[#ccc] p-3 md:p-5 mx-12 md:mx-96'>País: <span className='font-bold'>{weatherData.country}</span></p>
-          <p className='border-b border-b-=[#ccc] p-3 md:p-5 mx-12 md:mx-96'>Cidade: <span className='font-bold'>{weatherData.name}</span></p>
-          <p className='border-b border-b-=[#ccc] p-3 md:p-5 mx-12 md:mx-96'>Descrição: <span className='font-bold'>{weatherData.description}</span></p>
+          <p className='border-b border-b-=[#ccc] p-4 md:p-5 mx-12 md:mx-96'>Temperatura:  <span className='font-bold'>
+            {weatherData.temp}</span></p>
+
+          <p className='border-b border-b-=[#ccc] p-3 md:p-5 mx-12 md:mx-96'>País: <span className='font-bold'>
+            {weatherData.country}</span></p>
+
+          <p className='border-b border-b-=[#ccc] p-3 md:p-5 mx-12 md:mx-96'>Cidade: <span className='font-bold'>
+            {weatherData.name}</span></p>
+
+          <p className='border-b border-b-=[#ccc] p-3 md:p-5 mx-12 md:mx-96'>Descrição: <span className='font-bold'>
+            {weatherData.description}</span></p>
+            
           <img src={weatherData.icon} alt="Weather Icon" 
-          className='md:ml-[749px] ml-32'/>
+          className='md:ml-[749px]  ml-36'/>
         </div>
       )}
 
       {!weatherData && (
-        <div className="text-white">
-          <p>Pesquise por algo</p>
+        <div className="p-10 text-center text-2xl">
+          <p>Pesquise por alguma cidade acima☝️</p>
         </div>
       )} 
     </div>
