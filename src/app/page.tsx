@@ -7,9 +7,8 @@ export default function Home() {
   return (
    <main>
       <Search
-      placeholder="Digite a Cidade..."
-      defaultValue="Florianópolis
-      "/>
+      placeholder="Digite o nome de uma Cidade"
+      />
       
    </main>
   )
